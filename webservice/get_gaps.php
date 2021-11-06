@@ -1,7 +1,7 @@
 <?php
     header('Content-Type:application/json; charset=UTF-8');
     $data = json_decode(file_get_contents("php://input"),false);
-    $secret_key = "gafeWh143ajk&$12a";
+    $secret_key = "gafeWh143ajk&12a";
     $key = $data->key;
 
     if ($key == $secret_key) {
