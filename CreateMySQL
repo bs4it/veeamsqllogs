@@ -1,0 +1,19 @@
+create database veeamsqllogs;
+use veeamsqllogs;
+
+
+create table gaps(
+   gap_ip INT NOT NULL AUTO_INCREMENT,
+   SubmissionDate DATETIME DEFAULT CURRENT_TIMESTAMP,
+   VBRServerName VARCHAR(20) NOT NULL,
+   ServerName VARCHAR(40) NOT NULL,
+   DatabaseName VARCHAR(140) NOT NULL,
+   BackupGapMinutes DECIMAL(8,2) NOT NULL,
+   BackupGapStatus VARCHAR(10) NOT NULL,
+   PRIMARY KEY ( gap_ip )
+);
+
+
+create user 'veeamsqllogs'@'localhost' IDENTIFIED BY 'ju5u6hxi';
+GRANT ALL PRIVILEGES ON veeamsqllogs.* to 'veeamsqllogs'@'localhost';
+FLUSH PRIVILEGES;
